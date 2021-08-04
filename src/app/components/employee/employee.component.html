@@ -1,0 +1,387 @@
+<div class="globlagred">
+    <div class="row">
+        <h2>FORMATO REPORTE DE INCIDENTE DE TRABAJO</h2><p>
+    
+    
+        <div class="containerUP_p3">
+            <h5>I. IDENTIFICACION GENERAL DEL EMPLEADOR, CONTRATANTE O COOPERATIVA</h5>
+        </div>
+        <div class="containersup">
+                <div class="col-md">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Tipo Ident.</th>
+                                <th>Numero</th>
+                                <th>Telefono</th>
+                                <th>Zona</th>
+                                <th>email</th>                    
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td> Empresa Ficticia</td>
+                                <td>NIT</td>
+                                <td>321456A-b</td>
+                                <td>525-252525</td>
+                                <td>Urbana</td>
+                                <td>empresaficticia@ohsreport.com</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+    
+            <div class="containersup">
+                <div class="col-md">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Direccion</th>
+                                <th>Departamento</th>
+                                <th>Municipio</th>
+                                                 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>Ave. Siempre viva ,Calle Falsa 123</td>
+                                <td>Santander</td>
+                                <td>Bucaramanga</td>
+                                
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+    
+    
+        <div class="containerUP_p3">
+            <h5>II. INFORMACION DE LA PERSONA QUE SE ACCIDENTO</h5>
+        </div>
+        <div class="col-lg-6">
+            <div class="containersup">
+                <form #employeeForm = "ngForm" (ngSubmit)= "getemploy(employeeForm)">
+                    <div class="form-group">
+                        <input 
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Documento empleado"
+                        name = "code"
+                        [(ngModel)]="employeeService.selectedEmployee"
+                        >
+                    </div>
+                    <br>
+                    <button class="btn btn-primary btn-sm mr-2">
+                        <i class= "material-icons">search</i> Buscar
+                    </button>
+                    <button class="btn btn-danger btn-sm mr-2" (click)="deleteEmployee()">
+                        <i class= "material-icons">delete</i> Borrar
+                    </button>
+                    <br>
+                    <br>
+                    
+                </form>
+            </div>
+                   
+        </div>
+    
+        <div class="containersup">
+            <div class="col-md">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cargo</th>
+                            <th>Documento</th>
+                            <th>EPS</th>
+                            <th>ARL</th>
+                            <th>email</th>                    
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>{{ employeeService.temporalEmployee.name }}</td>
+                            <td>{{ employeeService.temporalEmployee.position }}</td>
+                            <td>{{ employeeService.temporalEmployee.code }}</td>
+                            <td>{{ employeeService.temporalEmployee.eps }}</td>
+                            <td>{{ employeeService.temporalEmployee.arl }}</td>
+                            <td>{{ employeeService.temporalEmployee.email }}</td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Departamento</th>
+                            <th>Municipio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Santander</td>
+                            <td>Bucaramanga</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+        
+        
+    </div>
+    
+    <div class="containerUP_p2">
+        <h5>III. INFORMACION SOBRE EL ACCIDENTE</h5>
+    </div>
+    
+    <form #formularioForm = "ngForm" (ngSubmit)= "createformularios(formularioForm)">
+    
+        <div class="grid">
+            <div class="containerUP">
+                <div class="containerUP_p1">
+                    <h6>Causo muerte al trabajador ?</h6>
+                </div>
+                <div class="container1">
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="deathE" class="form-check-input" type="radio" name="DeathOptions"  value= true>
+                        <label class="form-check-label" >SI</label>
+                    </div>
+                      <div class="form-check form-check-inline">
+                        <input [(ngModel)]="deathE" class="form-check-input" type="radio" name="DeathOptions"  value= false>
+                        <label class="form-check-label" >NO</label>
+                    </div>              
+                </div>
+                
+                
+            </div>
+                
+                
+            <div class="containerUP">
+                <div class="containerUP_p1">
+                    <h6>Lugar del accidente</h6>
+                </div>
+                <div class="container1">
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="lugar" class="form-check-input" type="radio" name="LugarOptions"  value="Dentro de Empresa">
+                        <label class="form-check-label" >Dentro de Empresa</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="lugar" class="form-check-input" type="radio" name="LugarOptions"  value="Fuera de Empresa">
+                        <label class="form-check-label" >Fuera de Empresa</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="lugar" class="form-check-input" type="radio" name="LugarOptions"  value="Trabajo en Casa">
+                        <label class="form-check-label" >Trabajo en Casa</label>
+                    </div>
+                             
+                </div>
+    
+                
+            </div>
+            
+            <div class="containerUP">
+                <div class="containerUP_p1">
+                    <h6>Fecha del accidente</h6>
+                </div>
+                <div class="container1">
+                    <form>
+                        <div class="form-group">                        
+                            <input type="date" class="form-control" min="2018-01-01" max="2021-12-12" (input)="onTextDate($event)">                                          
+                        </div>
+                    </form>
+                </div>
+        
+            </div>    
+            
+        </div>
+        
+        
+        <div class="grid">
+            <div class="containerUP">
+                <div class="containerUP_p1">
+                    <h6>Sitio del accidente</h6>
+                </div>
+                <div class="container1_2">
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="sitio" class="form-check-input" type="radio" name="SitioOptions" value="Almacenes">
+                        <label class="form-check-label" >Almacenes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="sitio" class="form-check-input" type="radio" name="SitioOptions" value="A.Producción">
+                        <label class="form-check-label" >A.Producción</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="sitio" class="form-check-input" type="radio" name="SitioOptions" value="A.Recreativas">
+                        <label class="form-check-label" >A.Recreativas</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="sitio" class="form-check-input" type="radio" name="SitioOptions" value="Escaleras/pasillos">
+                        <label class="form-check-label" >Escalera/pasillo</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="sitio" class="form-check-input" type="radio" name="SitioOptions" value="Parqueaderos">
+                        <label class="form-check-label" >Parqueaderos</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="sitio" class="form-check-input" type="radio" name="SitioOptions"  value="Oficinas">
+                        <label class="form-check-label" >Oficinas</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="sitio" class="form-check-input" type="radio" name="SitioOptions"  value="A.Comnunes">
+                        <label class="form-check-label" >A.Comunes</label>
+                    </div>
+                    
+                </div>
+            </div>
+        
+        
+            <div class="containerUP">
+                <div class="containerUP_p1">
+                    <h6>Tipo de lesión</h6>
+                </div>
+                <div class="container1_1">
+                    <div class="form-check-inline" *ngFor="let item of categories" required>
+                       <input class="form-check-input" name={{item.name}} type="checkbox" value={{item.name}} (change)="onChange($event)">
+                       <label class="form-check-label"> {{item.name}}</label>                   
+                    </div>
+                                    
+                </div>
+                
+            </div>
+        
+        
+            <div class="containerUP">
+                <div class="containerUP_p1">
+                    <h6>Parte del cuuerpo afectada</h6>
+                </div>
+                <div class="container1_2">
+        
+                    <div class="form-check-inline" *ngFor="let item of partes">
+                        <input class="form-check-input" name={{item.name}} type="checkbox" value={{item.name}} (change)="onChange2($event)">
+                        <label class="form-check-label"> {{item.name}}</label>
+                    </div>
+                               
+                    
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="grid2">
+            <div class="containerUP">
+                <div class="containerUP_p1">
+                    <h6>Agente del accidente</h6>
+                </div>    
+                <div class="container1_2">
+                    <div class="form-check-inline" *ngFor="let item of agentes" (change)="onChange3($event)">
+                        <input class="form-check-input" name={{item.name}} type="checkbox" value={{item.name}}>
+                        <label class="form-check-label">{{item.name}}</label>
+                    </div>
+                </div>
+        
+            </div>
+        
+        
+            <div class="containerUP">
+                <div class="containerUP_p1">
+                    <h6>Mecanismo del accidente</h6>
+                </div>
+                <div class="container1_2">
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="meca" class="form-check-input" type="radio" name="AgenteOptions"  value="Caída Persona">
+                        <label class="form-check-label" >Caída Persona</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="meca" class="form-check-input" type="radio" name="AgenteOptions"  value="Caída Objeto">
+                        <label class="form-check-label" >Caída Objeto</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="meca" class="form-check-input" type="radio" name="AgenteOptions"  value="Choques/Golpes">
+                        <label class="form-check-label" >Choques/Golpes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="meca" class="form-check-input" type="radio" name="AgenteOptions"  value="Sobreesfuerzo">
+                        <label class="form-check-label" >Sobreesfuerzo</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="meca" class="form-check-input" type="radio" name="AgenteOptions"  value="↑ Temperatura">
+                        <label class="form-check-label" >↑ Temperatura</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="meca" class="form-check-input" type="radio" name="AgenteOptions"  value="Electrificado">
+                        <label class="form-check-label" >Electrificado</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input [(ngModel)]="meca" class="form-check-input" type="radio" name="AgenteOptions"  value="Salpicaduras">
+                        <label class="form-check-label" >Salpicaduras</label>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="containerUP">
+                <div class="containerUP_p1">
+                    <h6>Descripción del accidente</h6>
+                </div>
+                
+                <div class="form-group">                
+                    <input type="text" class="form-control" rows="2" placeholder="De una breve descipción de lo sucedido durante el accidente" (input)="onTextboxInput($event)">                
+                </div>
+        
+            </div>
+        
+            
+        </div>
+
+        <div class="containersup">
+            <div class="containerUP_p1">
+                <h6>Persona responsable del informe</h6>
+            </div>
+            <div class="col-md">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Tipo Ident.</th>
+                            <th>Numero</th>
+                            <th>Telefono</th>                        
+                            <th>email</th>                    
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>Juan Perez</td>
+                            <td>C.C.</td>
+                            <td>1234567</td>
+                            <td>525-252525</td>                        
+                            <td>juanperez@ohsreport.com</td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+        <button class="btn btn-primary btn-sm mr-2">
+            <i class= "material-icons">search</i>Enviar
+        </button>
+    
+    </form>
+
+    
+
+</div>
+
+
+

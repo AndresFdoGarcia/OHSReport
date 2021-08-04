@@ -1,0 +1,96 @@
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+
+<body>
+    <div class="bg">
+        <div class="grid">
+            <div class="titulog"></div>
+            <div class="container2">
+                <a href="formulario">
+                    <div class="caja1 " style="cursor: pointer;">
+                        <div class="container1">
+                            <div class="container1_2">
+                                <i class="large material-icons" style="color: #f1f2f3">important_devices</i>
+                                <i class="large material-icons" style="color: #f1f2f3">group</i>
+                            </div>
+                        </div>
+                        
+                        <span>Aplicativo diseñado para generar reportes de accidentes laborales.</span>
+                    </div>
+                </a>
+                
+                <div class="caja1" style="cursor: pointer;" (click)="enviar(nombreModal)">
+                    <i class="large material-icons" style="color: #f1f2f3">event_note</i>
+                    <span>Glosario relaciondo con términos de seguridad y salud en el trabajo.</span>
+                </div>
+    
+                <div class="caja1" style="cursor: pointer;" (click)="enviar(nombreModal2)">
+                    <div class="container1_2">
+                        <i class="large material-icons" style="color: #f1f2f3">school</i>                        
+                        <i class="large material-icons" style="color: #f1f2f3">settings_system_daydream</i>
+                    </div>
+                    <span>Desarrollo del proyecto, proyección de resultados y herramientas utilizadas</span>                   
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <ng-template #nombreModal let-c="close">
+
+        <div class="modal-dialog modal-xl">
+            <div class="modal-header">
+                <h3 id="modal-basic-title">GLOSARIO SEGURIDAD Y SALUD EN EL TRABAJO</h3>                                        
+            </div>
+            <div class="modal-body">
+                
+<h6>Fractura:</h6> Incluye las fracturas simples, las fracturas acompañadas de lesiones en partes blandas (fracturas abiertas), las fracturas acompañadas de lesiones en las articulaciones (con luxaciones etc), las fracturas acompañadas de lesiones internas o nerviosas.<br><br>
+<h6>Luxación:</h6> Incluye las subluxaciones y los desplazamientos de articulaciones. Excluye las luxaciones con fractura, las cuales deberán indicarse en el ítem de fractura.<br><br>
+<h6>Torcedura, esguince, desgarro muscular, hernia o laceración de músculo o de tendón, sin herida:</h6> Incluye cada una de las citadas en el ítem, hernias producidas por esfuerzos, roturas, rasgaduras y laceraciones de tendones, de ligamentos y articulaciones, a menos que vayan asociadas a heridas abiertas, caso en el cual se indicará sólo en el ítem de herida.<br><br>
+<h6>Conmoción o trauma interno:</h6> Incluye las contusiones internas, las hemorragias internas, los desgarramientos internos, las roturas internas, a menos que vayan acompañados de fracturas, las cuales deberán indicarse en el ítem correspondiente a fractura.<br><br>
+<h6>Amputación o enucleación:</h6> Hace referencia a cualquiera de las dos condiciones listadas en el ítem, sea por amputación = desprendimiento de alguna parte del cuerpo, Ej: miembros superiores, inferiores o alguna parte de los mismos, a cualquier nivel o por enucleación = exclusión o pérdida traumática del ojo, incluye avulsión traumática del ojo.<br><br>
+<h6>Herida:</h6> Incluye desgarramientos, cortaduras, heridas contusas, heridas de cuero cabelludo, así como avulsión de uña o de oreja, o heridas acompañadas de lesiones de nervios, así como también mordeduras sin consecuencias en órganos internos o generalizados como envenenamiento evidente, pero que no sean superficiales. Excluye amputaciones traumáticas, enucleación, pérdida traumática del ojo, fracturas abiertas, quemaduras con herida, heridas superficiales y pinchazos o punciones (por animales o por objetos).<br><br>
+<h6>Trauma superficial:</h6> Incluye heridas superficiales, excoriaciones, rasguños, ampollas, picaduras de insectos no venenosos, punciones o pinchazos por objetos, con o sin salida de sangre, cualquier lesión superficial, laceración o herida en el ojo o párpados por inclusión de alguna partícula o elemento. Excluye enucleación y heridas profundas o severas en el ojo.<br><br>
+<h6>Golpe o contusión o aplastamiento:</h6> Incluye hemartrosis (colección de sangre en articulaciones), hematomas (colección de sangre en tejidos blandos), machacaduras, las contusiones y aplastamientos con heridas superficiales. Excluye conmociones contus iones y aplastamientos por fracturas, contusiones y aplastamientos con heridas.<br><br>
+<h6>Quemadura:</h6> Incluye las quemaduras por objetos calientes, por fuego, por líquido hirviendo, por fricción, por radiaciones (infrarrojas), por sustancias químicas (quemaduras externas solamente) y quemaduras con herida. Excluye quemaduras causadas por la absorción de una sustancia corrosiva
+o cáustica, las quemaduras causadas por el sol, los efectos del rayo, las quemaduras causadas por la corriente eléctrica, y los efectos de las radiaciones diferentes a quemaduras.<br><br>
+<h6>Envenenamiento o intoxicación aguda o alergia:</h6> Incluye los efectos agudos de la inyección, ingestión, absorción o inhalación de sustancias tóxicas, corrosivas o cáusticas así como efectos de picaduras o mordeduras de animales venenosos, asfixia por óxido de carbono u otros gases tóxicos. Excluye las quemaduras externas por sustancias químicas y picaduras o mordeduras que sólo ocasionan punción o heridas.<br><br>
+<h6>Efectos del tiempo, del clima u otros relacionados con el ambiente:</h6> Incluye efectos del frío (heladuras), efectos del calor y de la insolación (quemaduras por el sol, acaloramiento, insolación), barotraumatismos o efectos de la altitud o de la descompresión, efectos del rayo, traumatismos sonoros o pérdida o disminución del oído, que no sean consecuencia de otra lesión.<br><br>
+<h6>Asfixia:</h6> Incluye ahogamiento por sumersión o inmersión, asfixia o sofocación por comprensión, por derrumbe o por estrangulación; comprende igualmente asfixia por supresión o reducción del oxígeno de la atmósfera ambiental y asfixia por penetración de cuerpos extraños en las vías respiratorias. Excluye asfixia por óxido de carbono u otros gases tóxicos.<br><br>
+<h6>Efecto de la electricidad:</h6> Incluye la electrocución, el choque eléctrico y las quemaduras causadas por la corriente eléctrica. Excluye las quemaduras causadas por las partes calientes de un aparto eléctrico y los efectos del rayo (las cuales deben ser incluidas como quemaduras).<br><br>
+<h6>Efecto nocivo de la radiación:</h6> Incluye los efectos causados por rayos X, sustancias radiactivas, rayos ultravioletas, radiaciones ionizantes. Excluye las quemaduras debidas a radiaciones y las causadas por el sol.<br><br>
+<h6>Lesiones múltiples:</h6> Este grupo sólo debe ser utilizado para clasificar los casos en los cuales la víctima, habiendo sufrido varias lesiones de tipo de lesión diferentes, ninguna de estas lesiones se ha manifestado más grave que las demás. Cando en un accidente que ha provocado lesiones múltiples de tipo de lesión diferente, una de ellas es más grave que las demás, este accidente debe clasificarse en el grupo correspondiente al respectivo tipo de lesión que cause mayor gravedad.<br><br>
+            </div>
+
+        </div>
+    </ng-template>
+
+
+    <ng-template #nombreModal2 let c="close">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-header">
+                <h3>DESARROLLO DEL PROYECTO</h3>
+            </div>
+            <div class="modal-body">
+                <img src="https://www.wildnettechnologies.com/wp-content/uploads/2018/04/mean-stack-2.png" class="centerino">
+                <p>
+                    Proyecto desarrollado bajo stack MEAN (MongoDB,Express,Angular y NodeJs) propuesto por MINTIC como evidencia de trabajo final para misionTIC 2022 en su último nivel, enfocado en desarrollo web.<br><br>
+                    Este proyecto aparte de contener las tecnologías antes mencionadas, incorpora bibliotecas que permiten una funcionalidad completa en tema de seguridad, como por
+                    ejemplo JWT:Json webtoken, por parte del back-end , para evitar el acceso a funciones exclusivas de usuarios regristrados. "Guards" en el front-end para proteger compenentes
+                    exclusivo de ciertos usuario con roles de administrador y demás contenido que hacen de este proyecto un gran idea de negocio viable.<br><br>
+                    Este reto fue propuesto en la plataforma Interacpedia, como desafío de una empresa para conocer posibles soluciones a su problema planteado, puede encontrarse "https://interacpedia.com/challenges/2190". Se crea un requisito y es remplazar los
+                    formularios que comunmente se deligencian en papel, utilizar a un aplicativo web y de esta forma llevar su registro.<br><br>
+                    
+                </p>
+            </div>
+        </div>
+    </ng-template>
+    
+</body>
+
+
+
+
+

@@ -1,0 +1,65 @@
+.grid{
+    display: grid;
+    background-image: url(https://i.ibb.co/Jp8KN2N/finaltodo.jpg);
+    grid-template-columns: 55% 45%;
+    grid-template-rows: 600px;
+    
+}
+
+.title h1{
+    text-align: left;
+    margin-top: 1em;
+    color: #000;
+    text-shadow: 7px 4px 5px rgb(87, 87, 92);
+    
+}
+
+.title h3{
+    text-align: left;
+    color: white;
+}
+.container1 h6{
+    text-align: left;
+    color: rgb(209, 202, 202);
+    padding: 15px;
+}
+
+.classico{
+    padding: 0em;  
+}
+
+.form-boxx{
+    padding: 1em;
+    display:grid;
+    
+}
+.container1{    
+    margin-top: auto;
+    margin-bottom: 4em;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 15px;
+    padding: 15px;
+    margin-right: 50px;
+    
+}
+
+
+input {
+    width: 80%;
+    padding: 1em;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    transition: 0.35s;
+    margin-top: 0.5em;
+    margin-left: 15px;
+    
+ }
+
+ .btonflexi{
+    display: flex;
+    padding: 1em;
+    align-items: center;
+    justify-content: center;
+ }

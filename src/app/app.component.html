@@ -1,1 +1,40 @@
-<h1>Hello World</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container d-flex">
+    <a class="navbar-brand" href="inicio">OHS Report</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav">
+          <ng-container *ngIf = " !authService.loggedIn(); else loggedIn">            
+            <li class="nav-item">
+              <a class="nav-link" routerLink = "/signin" routerLinkActive = "active">Login</a>
+            </li>              
+          </ng-container>
+          <ng-template #loggedIn>
+            <ng-container *ngIf = "authService.rolMaster(); else falseIN">
+              <li class="nav-item">
+                <a class="nav-link" routerLink = "/employee" routerLinkActive = "active">Formulario</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink = "/formulario" routerLinkActive = "active">Lista Accidentes</a>
+              </li>              
+              <li class="nav-item">
+                <a class="nav-link" style="cursor: pointer;" (click)="authService.logout()">Logout</a>              
+            </ng-container>
+            <ng-template #falseIN>
+              <li class="nav-item">
+                <a class="nav-link" routerLink = "/formulario" routerLinkActive = "active">Lista Accidentes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="cursor: pointer;" (click)="authService.logout()">Logout</a>
+            </ng-template>
+          </ng-template>                
+        </ul>         
+      </div>
+    
+  </div>
+</nav>
+<router-outlet></router-outlet>
+  

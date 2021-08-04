@@ -1,0 +1,185 @@
+<div class="majoruse">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Empleado</th>
+                <th>Fecha</th>
+                <th>Lugar Accidente</th>
+                <th>Mecanismo</th>
+                <th>Sitio</th>
+                <th>Detalle</th>
+                                   
+            </tr>
+        </thead>
+        <tbody> 
+            <tr *ngFor="let item of arreglofinal">
+                
+                <td>{{item.empleado.name}}</td>
+                <td>{{item.fecha}}</td>
+                <td>{{item.lugar}}</td>
+                <td>{{item.meca}}</td>
+                <td>{{item.sitio}}</td>
+                <td><button type="button" class="btn btn-primary btn-sm" (click)="enviar(nombreModal)">Abrir</button>
+                    
+                    <ng-template #nombreModal let c="close">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-header">
+                                Formato Reporte Accidente
+                                Empresa Ficticia  NIT321456A-b
+                            </div>
+                            <div class="modal-body">                             
+                                <div class="containersup">
+                                        <div class="col-md">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>                                                                  
+                                                        <th>Telefono</th>                                                    
+                                                        <th>Direccion</th>                    
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    
+                                                    <tr>
+                                                        <td>525-252525</td>                                                    
+                                                        <td>Ave. Siempre viva ,Calle Falsa 123 - Stnder/Bmanga</td>
+                                                        
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+    
+                                                          
+                            
+                                    <div class="containersup">
+                                        <div class="col-md">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="containerUP_p2">
+                                        <h5>II. INFORMACION DE LA PERSONA QUE SE ACCIDENTO</h5>
+                                    </div>  
+                                 
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Empleado</th> 
+                                            <th>Documento</th>
+                                            <th>Cargo</th>
+                                            <th>Correo @</th>                                                                                        
+                                        </tr>                                   
+                                    </thead>
+                                    <tbody> 
+                                        <tr>
+                                            <td>{{item.empleado.name}}</td>
+                                            <td>{{item.empleado.code}}</td>
+                                            <td>{{item.empleado.position}}</td>                                        
+                                            <td>{{item.empleado.email}}</td>                                                                                                                                
+                                        </tr>                                   
+                                        
+                                    </tbody>
+                                </table>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>EPS</th>
+                                            <th>ARL</th>
+                                            <th>Fallece</th>
+                                        </tr>                                    
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{item.empleado.eps}}</td>
+                                            <td>{{item.empleado.arl}}</td>
+                                            <td>{{item.deathE}}</td>
+                                        </tr>                                    
+                                    </tbody>
+                                </table>
+    
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Sitio</th> 
+                                            <th>Documento</th>
+                                            <th>Fallece</th>
+                                            <th>Lugar Accidente</th>
+                                            <th>Mecanismo</th>                                                                                        
+                                        </tr>                                   
+                                    </thead>
+                                    <tbody> 
+                                        <tr>
+                                            <td>{{item.sitio}}</td>
+                                            <td>{{item.empleado.code}}</td>
+                                            <td>{{item.deathE}}</td>
+                                            <td>{{item.lugar}}</td>
+                                            <td>{{item.meca}}</td>                                                                                                                                
+                                        </tr>                                   
+                                        
+                                    </tbody>
+                                </table>
+                                
+                                <div class="containerUP_p2">
+                                    <h5>III. INFORMACION SOBRE EL ACCIDENTE</h5>
+                                </div>
+    
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Feha</th> 
+                                            <th>Lugar</th>
+                                            <th>Sitio</th>                                        
+                                            <th>Mecanismo</th>                                                                                        
+                                        </tr>                                   
+                                    </thead>
+                                    <tbody> 
+                                        <tr>
+                                            <td>{{item.fecha}}</td>
+                                            <td>{{item.lugar}}</td>
+                                            <td>{{item.sitio}}</td>
+                                            <td>{{item.meca}}</td>                                                                                                                                                                       
+                                        </tr>                                   
+                                        
+                                    </tbody>
+                                </table>
+    
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Tipo de lesión</th> 
+                                            <th>Parte del cuerpo afectada</th>
+                                            <th>Agentedel accidente</th>                                                                                                                 
+                                        </tr>                                   
+                                    </thead>
+                                    <tbody> 
+                                        <tr>
+                                            <td>{{item.tipo}}</td>
+                                            <td>{{item.parte}}</td>
+                                            <td>{{item.agente}}</td>                                                                                                                                                                                                              
+                                        </tr>                                   
+                                        
+                                    </tbody>
+                                </table>
+    
+    
+                            
+                            </div>
+    
+                        </div>
+                       
+                        <div class="modal-footer">
+                            <button class="btn btn-primary btn-sm" (click)="PrintPage()">print</button>
+                        </div>
+                    
+                    </ng-template>
+                </td>                       
+            </tr>      
+            
+        </tbody>
+    </table>
+    
+</div>
+
+
+
+
+
