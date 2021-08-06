@@ -1,6 +1,4 @@
 # OHS REPORT 📝
-<<<<<<< HEAD
-=======
 
 ## ¿Cómo generar un sistema digital de reporte de incidentes en la planta?
 
