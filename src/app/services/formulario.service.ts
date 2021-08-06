@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http'
 import { Formulario } from "../models/formulario"
 import { BOOL_TYPE } from '@angular/compiler/src/output/output_ast';
 import { Observable, ObservedValueOf } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -30,7 +31,7 @@ export class FormularioService {
   
 
 
-  URL_API = 'http://localhost:4000/api/formulario'
+  URL_API = environment.apiURL +'formulario'
 
   constructor(private http : HttpClient) { }
 

@@ -1,8 +1,7 @@
 .grid{
-    display: grid;
-    background-image: url(https://i.ibb.co/Jp8KN2N/finaltodo.jpg);
+    display: grid;    
     grid-template-columns: 55% 45%;
-    grid-template-rows: 600px;
+    grid-template-rows: 37.5em;
     
 }
 
@@ -21,7 +20,7 @@
 .container1 h6{
     text-align: left;
     color: rgb(209, 202, 202);
-    padding: 15px;
+    
 }
 
 .classico{
@@ -39,7 +38,7 @@
     background-color: rgba(0,0,0,0.3);
     border-radius: 15px;
     padding: 15px;
-    margin-right: 50px;
+    margin-right: 3.125em;
     
 }
 
@@ -62,4 +61,19 @@ input {
     padding: 1em;
     align-items: center;
     justify-content: center;
+ }
+
+ .bg{
+    background-image: url(https://i.ibb.co/Jp8KN2N/finaltodo.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
+
+ @media (max-width:768px){
+    .grid{        
+        grid-template-columns: 1fr;
+        grid-template-rows: 1% 99%;    
+    }
  }

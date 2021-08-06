@@ -7,6 +7,7 @@ import { Employee } from './models/employee';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {  
+export class AppComponent {
+  isCollapsed = false;
   constructor(public authService : AuthService){}
 }

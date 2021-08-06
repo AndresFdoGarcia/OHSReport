@@ -13,6 +13,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { FormularioComponent } from './components/formulario/formulario.component'
 import {NgbModal, ModalDismissReasons, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { InicioComponent } from './components/inicio/inicio.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -29,7 +30,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgxPaginationModule
   ],
   providers: [
     AuthGuard,

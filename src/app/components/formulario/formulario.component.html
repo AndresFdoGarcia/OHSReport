@@ -1,24 +1,25 @@
 <div class="majoruse">
-    <table class="table table-striped">
+    <button type="button" class="btn btn-outline-success btn-sm" (click)="exportexcel()">Exportar a Excel</button>
+    <table class="table table-striped" id="excel-table">
         <thead>
             <tr>
                 <th>Empleado</th>
                 <th>Fecha</th>
                 <th>Lugar Accidente</th>
-                <th>Mecanismo</th>
                 <th>Sitio</th>
+                <th>Mecanismo</th>
                 <th>Detalle</th>
                                    
             </tr>
         </thead>
         <tbody> 
-            <tr *ngFor="let item of arreglofinal">
+            <tr *ngFor="let item of arreglofinal | paginate: { itemsPerPage: 7, currentPage: p }">
                 
                 <td>{{item.empleado.name}}</td>
                 <td>{{item.fecha}}</td>
                 <td>{{item.lugar}}</td>
-                <td>{{item.meca}}</td>
                 <td>{{item.sitio}}</td>
+                <td>{{item.meca}}</td>
                 <td><button type="button" class="btn btn-primary btn-sm" (click)="enviar(nombreModal)">Abrir</button>
                     
                     <ng-template #nombreModal let c="close">
@@ -34,7 +35,8 @@
                                                 <thead>
                                                     <tr>                                                                  
                                                         <th>Telefono</th>                                                    
-                                                        <th>Direccion</th>                    
+                                                        <th>Direccion</th>
+                                                        <th>Representante SST</th>                   
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -42,13 +44,12 @@
                                                     <tr>
                                                         <td>525-252525</td>                                                    
                                                         <td>Ave. Siempre viva ,Calle Falsa 123 - Stnder/Bmanga</td>
-                                                        
+                                                        <td>Juan Perez</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div>
-    
+                                    </div>    
                                                           
                             
                                     <div class="containersup">
@@ -110,7 +111,7 @@
                                         <tr>
                                             <td>{{item.sitio}}</td>
                                             <td>{{item.empleado.code}}</td>
-                                            <td>{{item.deathE}}</td>
+                                            <td *ngIf="item.deathE==false; else sipana">NO</td>
                                             <td>{{item.lugar}}</td>
                                             <td>{{item.meca}}</td>                                                                                                                                
                                         </tr>                                   
@@ -159,25 +160,47 @@
                                         
                                     </tbody>
                                 </table>
-    
-    
+                                
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Descripción del accidente</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <td>{{item.descrip}}</td>
+                                    </tbody>
+                                </table>
+                                
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Firma SST</th>
+                                        </tr>
+                                    </thead>                                    
+                                </table>
                             
                             </div>
     
                         </div>
                        
                         <div class="modal-footer">
-                            <button class="btn btn-primary btn-sm" (click)="PrintPage()">print</button>
+                            <button class="btn btn-primary btn-sm" (click)="PrintPage()">Imprimir</button>                            
                         </div>
                     
+                    </ng-template>
+
+                    <ng-template #sipana>
+                        <td>SI</td>
                     </ng-template>
                 </td>                       
             </tr>      
             
         </tbody>
     </table>
-    
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>   
 </div>
+
 
 
 

@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container d-flex">
     <a class="navbar-brand" href="inicio">OHS Report</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <button class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#navbarColor02"  aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarColor02">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   
-      <div class="collapse navbar-collapse" id="navbarColor02">
-        <ul class="navbar-nav">
+      <div class="navbar-collapse collapse" id="navbarColor02" [ngbCollapse]="isCollapsed">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <ng-container *ngIf = " !authService.loggedIn(); else loggedIn">            
             <li class="nav-item">
               <a class="nav-link" routerLink = "/signin" routerLinkActive = "active">Login</a>
@@ -30,11 +30,13 @@
               <li class="nav-item">
                 <a class="nav-link" style="cursor: pointer;" (click)="authService.logout()">Logout</a>
             </ng-template>
-          </ng-template>                
+          </ng-template>
         </ul>         
       </div>
     
   </div>
 </nav>
+
+
 <router-outlet></router-outlet>
   

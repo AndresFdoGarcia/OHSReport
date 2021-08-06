@@ -62,19 +62,20 @@ export class EmployeeComponent implements OnInit {
     {name :"Lugar trabajo", id: 5},
     {name :"Animales", id: 6},
     {name :"no Clasificado", id: 7},
-  ];
+  ];  
 
   
 
   ngOnInit(): void {
-    
+    this.futureDisable();
   }
+
+  maxDate: any ="2021-08-05";
 
   getEmployees(){
     this.employeeService.getEmployee().subscribe(
       res => {
-        this.employeeService.employees = res;
-        console.log(res)
+        this.employeeService.employees = res;        
       },
       err => console.log(err)
     )
@@ -114,7 +115,6 @@ export class EmployeeComponent implements OnInit {
 
   createformularios(form : NgForm){
 
-    console.log(this.deathE);
     const flag = this.deathE
 
     if(flag == "true"){
@@ -147,7 +147,7 @@ export class EmployeeComponent implements OnInit {
 
     this.fomularioService.createFormulario(form.value).subscribe(
       res=>{
-        console.log(res)
+        
         form.reset();
         this.router.navigate(['/formulario'])
         
@@ -167,8 +167,7 @@ export class EmployeeComponent implements OnInit {
   }
 
   onChange(event:any) {
-    if(event.target.checked) {
-      console.log(event.target.value)
+    if(event.target.checked) {      
       this.emailFormArray.push(event.target.value);
     } else {
       let index = this.emailFormArray.indexOf(event.target.value);
@@ -204,8 +203,25 @@ export class EmployeeComponent implements OnInit {
 
   onTextDate(event:any){
     
-    this.fecha = event.target.value;
-    console.log(this.fecha)   
-}
+    this.fecha = event.target.value;    
+  }
+
+  futureDisable(){
+    var date:any = new Date();
+    var todayDate:any = date.getDate();
+    var month:any = date.getMonth() + 1;
+    var year:any = date.getFullYear();
+
+    if(todayDate<10){
+      todayDate = '0' + todayDate;
+    }
+
+    if(month<10){
+      month = '0' + month;
+    }
+
+    this.maxDate = year + "-" + month + "-" + todayDate;
+
+  }
 
 }

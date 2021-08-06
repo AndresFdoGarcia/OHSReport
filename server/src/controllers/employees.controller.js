@@ -1,5 +1,5 @@
 const employeeCtrl = {}
-const Employee = require('../models/EmpLoyee')
+const Employee = require('../models/Employee')
 const jwt = require('jsonwebtoken')
 
 employeeCtrl.getEmployees = async (req,res) => {

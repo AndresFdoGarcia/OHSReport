@@ -8,22 +8,18 @@
         <div class="grid">
             <div class="titulog"></div>
             <div class="container2">
-                <a href="formulario">
-                    <div class="caja1 " style="cursor: pointer;">
-                        <div class="container1">
-                            <div class="container1_2">
-                                <i class="large material-icons" style="color: #f1f2f3">important_devices</i>
-                                <i class="large material-icons" style="color: #f1f2f3">group</i>
-                            </div>
-                        </div>
-                        
-                        <span>Aplicativo diseñado para generar reportes de accidentes laborales.</span>
-                    </div>
-                </a>
+                
+                <div class="caja1" style="cursor: pointer;" (click)="enviar(nombreModal3)">
+                    <div class="container1_2">
+                        <i class="large material-icons" style="color: #f1f2f3">important_devices</i>
+                        <i class="large material-icons" style="color: #f1f2f3">group</i>
+                    </div>               
+                    <span>Aplicativo diseñado para generar reportes de accidentes laborales.</span>
+                </div>
                 
                 <div class="caja1" style="cursor: pointer;" (click)="enviar(nombreModal)">
                     <i class="large material-icons" style="color: #f1f2f3">event_note</i>
-                    <span>Glosario relaciondo con términos de seguridad y salud en el trabajo.</span>
+                    <span>Glosario relacionado con términos de seguridad y salud en el trabajo.</span>
                 </div>
     
                 <div class="caja1" style="cursor: pointer;" (click)="enviar(nombreModal2)">
@@ -31,7 +27,7 @@
                         <i class="large material-icons" style="color: #f1f2f3">school</i>                        
                         <i class="large material-icons" style="color: #f1f2f3">settings_system_daydream</i>
                     </div>
-                    <span>Desarrollo del proyecto, proyección de resultados y herramientas utilizadas</span>                   
+                    <span>Desarrollo del proyecto, proyección de resultados y herramientas utilizadas.</span>                   
                 </div>
                 
             </div>
@@ -75,15 +71,39 @@ o cáustica, las quemaduras causadas por el sol, los efectos del rayo, las quema
             </div>
             <div class="modal-body">
                 <img src="https://www.wildnettechnologies.com/wp-content/uploads/2018/04/mean-stack-2.png" class="centerino">
+                <br>
                 <p>
                     Proyecto desarrollado bajo stack MEAN (MongoDB,Express,Angular y NodeJs) propuesto por MINTIC como evidencia de trabajo final para misionTIC 2022 en su último nivel, enfocado en desarrollo web.<br><br>
                     Este proyecto aparte de contener las tecnologías antes mencionadas, incorpora bibliotecas que permiten una funcionalidad completa en tema de seguridad, como por
                     ejemplo JWT:Json webtoken, por parte del back-end , para evitar el acceso a funciones exclusivas de usuarios regristrados. "Guards" en el front-end para proteger compenentes
-                    exclusivo de ciertos usuario con roles de administrador y demás contenido que hacen de este proyecto un gran idea de negocio viable.<br><br>
+                    exclusivo de ciertos usuario con roles de administrador y demás contenido que hacen de este proyecto una gran idea de negocio viable.<br><br>
                     Este reto fue propuesto en la plataforma Interacpedia, como desafío de una empresa para conocer posibles soluciones a su problema planteado, puede encontrarse "https://interacpedia.com/challenges/2190". Se crea un requisito y es remplazar los
-                    formularios que comunmente se deligencian en papel, utilizar a un aplicativo web y de esta forma llevar su registro.<br><br>
+                    formularios que comunmente se deligencian en papel, a utilizar un aplicativo web que permita llevar su registro.<br><br>
                     
                 </p>
+            </div>
+        </div>
+    </ng-template>
+
+
+    <ng-template #nombreModal3 let c="close">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-header">
+                <h3>IDEA DEL PROYECTO</h3>
+            </div>
+            <div class="modal-body">                
+                
+                    <h6>🧑‍✈️  Misión y objetivos del proyecto:</h6>
+                    <br>
+                    Diseñar e implementar una herramienta WEB para la gestión de reportes de incidentes laborales que pueda ser utilizada por cualquier organización, la cual cuente con un módulo de vista y un módulo de gestión que serán utilizados por personal SST.
+                    <br><br><br>
+                    <h6>🎯 Product BackLog</h6>
+                    <br>
+                    <li>Realiza conexión de la base de datos con la app y desplegar el servicio.</li>
+                    <li>Como usuario registrado debe poder iniciar sesión para realizar CRUD con la api.</li>
+                    <li>Como usuario logueado debe tener acceso a cierto contenido según su rol, siendo el SST el único autorizado para generar el reporte.</li>
+                    <li>La herramienta debe permitir la exportación del formulario e imprimirlo en formato PDF.</li>
+                                       
             </div>
         </div>
     </ng-template>

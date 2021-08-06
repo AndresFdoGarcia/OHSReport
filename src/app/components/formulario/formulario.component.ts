@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms'
 import { FormularioService } from 'src/app/services/formulario.service'
 import { Formulario } from 'src/app/models/formulario';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import * as XLSX from 'xlsx';
 
 
 @Component({
@@ -44,6 +45,14 @@ export class FormularioComponent implements OnInit {
   
   arreglofinal: Array<any> = [];
 
+  title = 'angular-app';
+  fileName= 'Accidentes.xlsx';
+  p = 1;
+  pageSize = 7;
+  collectionSize = this.arreglofinal.length;
+  vector : Array<any>= [];
+
+
   constructor( public fomularioService : FormularioService , private modalService: NgbModal) { 
 
     
@@ -51,7 +60,7 @@ export class FormularioComponent implements OnInit {
 
   
   ngOnInit(): void {
-    this.getFormularios();
+    this.getFormularios();   
     
   }
 
@@ -66,7 +75,7 @@ export class FormularioComponent implements OnInit {
   }
 
   enviar(modal : any){
-    this.modalService.open(modal, { size: 'xl', backdrop: 'static'});
+    this.modalService.open(modal, { size: 'xl'});
   }
   
   PrintPage(){
@@ -76,17 +85,28 @@ export class FormularioComponent implements OnInit {
   ultra(){
     for (let i of this.fomularioService.formularios){
 
-      this.datain = i
+      this.datain = i      
       this.datain.tipo.shift()
       this.datain.agente.shift()
-      this.datain.parte.shift()  
-      this.arreglofinal.push(this.datain)
-      
-      console.log(this.arreglofinal)
-      
+      this.datain.parte.shift()      
+      this.arreglofinal.push(this.datain)  
     }        
   }
 
-    
+  exportexcel(): void
+  {
+    /* pass here the table id */
+    //let element = document.getElementById('excel-table');
+    //const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.arreglofinal);
+ 
+    /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+ 
+    /* save to file */  
+    XLSX.writeFile(wb, this.fileName);
+ 
+  }  
 
 }

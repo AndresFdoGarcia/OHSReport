@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, JsonpClientBackend } from '@angular/common/http';
 import { Router } from '@angular/router';
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class AuthService {
 
   roleAs: any;
 
-  private URL = 'http://localhost:4000/api/employees'
+  private URL = environment.apiURL + 'employees'
 
   constructor(private http: HttpClient, private router: Router) { }
 

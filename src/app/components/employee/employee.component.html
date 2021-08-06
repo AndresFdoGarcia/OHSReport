@@ -183,6 +183,7 @@
                         <input [(ngModel)]="lugar" class="form-check-input" type="radio" name="LugarOptions"  value="Trabajo en Casa">
                         <label class="form-check-label" >Trabajo en Casa</label>
                     </div>
+                    
                              
                 </div>
     
@@ -196,7 +197,7 @@
                 <div class="container1">
                     <form>
                         <div class="form-group">                        
-                            <input type="date" class="form-control" min="2018-01-01" max="2021-12-12" (input)="onTextDate($event)">                                          
+                            <input type="date" class="form-control" min="2018-01-01" max={{maxDate}} (input)="onTextDate($event)">                                          
                         </div>
                     </form>
                 </div>
@@ -365,7 +366,7 @@
                             <td>C.C.</td>
                             <td>1234567</td>
                             <td>525-252525</td>                        
-                            <td>juanperez@ohsreport.com</td>
+                            <td>juanp@ohsreport.com</td>
                             
                         </tr>
                     </tbody>
